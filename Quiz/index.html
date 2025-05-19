@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Conhecimento Gerais</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #eaeaea; }
+        .container { max-width: 600px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px #1a790d; }
+        h1 { text-align: center; }
+        .question { font-size: 1.1em; margin: 20px 0 10px 0; }
+        .options { margin-bottom: 20px; }
+        .result, .gabarito { margin-top: 30px; }
+        .hide { display: none; }
+        button { padding: 10px 20px; font-size: 1em; border: none; border-radius: 4px; background: #007bff; color: #fff; cursor: pointer; }
+        button:disabled { background: #ccc; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="imgQuiz.png" alt="Quiz de História" style="display:block; margin:0 auto 20px auto; max-width:100px;">
+        <div id="quiz"></div>
+        <div class="result" id="result"></div>
+        <div class="gabarito" id="gabarito"></div>
+    </div>
+    <script>
+        const perguntas = [
+            {
+                texto: "1. Qual foi o principal objetivo das Grandes Navegações europeias no século XV?",
+                opcoes: [
+                    "A) Estudar novas espécies de animais",
+                    "B) Fugir de guerras na Europa",
+                    "C) Buscar novas rotas comerciais para as Índias",
+                    "D) Conquistar terras na América do Norte",
+                    "E) Colonizar o continente africano"
+                ],
+                resposta: "C"
+            },
+            {
+                texto: "2. Em que ano o Brasil foi oficialmente \"descoberto\" pelos portugueses?",
+                opcoes: [
+                    "A) 1492",
+                    "B) 1500",
+                    "C) 1521",
+                    "D) 1600",
+                    "E) 1519"
+                ],
+                resposta: "B"
+            },
+            {
+                texto: "3. Quem proclamou a Independência do Brasil em 1822?",
+                opcoes: [
+                    "A) Dom João VI",
+                    "B) Tiradentes",
+                    "C) Dom Pedro I",
+                    "D) José Bonifácio",
+                    "E) Marechal Deodoro da Fonseca"
+                ],
+                resposta: "C"
+            },
+            {
+                texto: "4. O que foi a escravidão no Brasil?",
+                opcoes: [
+                    "A) Um sistema de trabalho voluntário",
+                    "B) Um regime de liberdade aos trabalhadores",
+                    "C) Um sistema de troca de favores políticos",
+                    "D) Uma política de imigração europeia",
+                    "E) A utilização forçada de mão de obra indígena e africana"
+                ],
+                resposta: "E"
+            },
+            {
+                texto: "5. Qual foi a principal consequência da Revolução Francesa (1789)?",
+                opcoes: [
+                    "A) O ​fim da monarquia absolutista e início do processo democrático na França",
+                    "B) A independência dos Estados Unidos",
+                    "C) A ascensão do absolutismo",
+                    "D) A dominação francesa sobre a Europa",
+                    "E) A fundação da ONU"
+                ],
+                resposta: "A"
+            },
+            {
+                texto: "6. A Era Vargas no Brasil (1930-1945) foi marcada por:",
+                opcoes: [
+                    "A) Instalação do parlamentarismo",
+                    "B) Estabilidade democrática contínua",
+                    "C) Fortalecimento do Estado e políticas trabalhistas",
+                    "D) Extinção das leis trabalhistas",
+                    "E) Adoção do sistema escravagista"
+                ],
+                resposta: "C"
+            },
+            {
+                texto: "7. A abolição da escravidão no Brasil ocorreu em:",
+                opcoes: [
+                    "A) 1808",
+                    "B) 1888",
+                    "C) 1822",
+                    "D) 1891",
+                    "E) 1870"
+                ],
+                resposta: "B"
+            },
+            {
+                texto: "8. O que foi o Iluminismo?",
+                opcoes: [
+                    "A) Um movimento artístico medieval",
+                    "B) Um conjunto de ideias religiosas da Antiguidade",
+                    "C) Um tratado de guerra entre países europeus",
+                    "D) Uma corrente filosófica que defendia razão, liberdade e ciência",
+                    "E) Uma doutrina militar do Império Romano"
+                ],
+                resposta: "D"
+            },
+            {
+                texto: "9. Qual o principal motivo que levou à queda da República de Weimar na Alemanha?",
+                opcoes: [
+                    "A) Crescimento da agricultura",
+                    "B) Popularização da música clássica",
+                    "C) Crise econômica e ascensão do nazismo",
+                    "D) Apoio da Alemanha à Revolução Russa",
+                    "E) Vitória alemã na Primeira Guerra Mundial"
+                ],
+                resposta: "C"
+            },
+            {
+                texto: "10. Durante a Guerra Fria, o que representava a Doutrina Truman?",
+                opcoes: [
+                    "A) Uma proposta de união entre os países socialistas",
+                    "B) Um plano de desenvolvimento africano",
+                    "C) Um pacto comercial entre países da América Latina",
+                    "D) Um acordo de paz entre EUA e URSS",
+                    "E) A política dos EUA de conter o avanço do comunismo"
+                ],
+                resposta: "E"
+            },
+        
+
+          {
+                texto: "11. Quanto é 7 + 5??",
+                opcoes: [
+                    "A) 10",
+                    "B) 11",
+                    "C) 12",
+                    "D) 13",
+                    
+                ],
+                resposta: "C"
+            },
+
+            {
+                texto: "12. 	2.	Qual é o dobro de 6?",
+                opcoes: [
+                    "A) 10",
+                    "B) 12",
+                    "C) 14",
+                    "D) 18",
+                    
+                ],
+                resposta: "B"
+            },
+
+             {
+                texto: "13. Quanto é 9 - 3?",
+                opcoes: [
+                    "A) 5",
+                    "B) 6",
+                    "C) 7",
+                    "D) 8",
+                    
+                ],
+                resposta: "B"
+            },
+
+             {
+                texto: "14. Se você tem 4 maçãs e ganha mais 3, com quantas fica?",
+                opcoes: [
+                    "A) 6",
+                    "B) 7",
+                    "C) 8",
+                    "D) 9",
+                    
+                ],
+                resposta: "B"
+            },
+
+              {
+                texto: "14. Se você tem 4 maçãs e ganha mais 3, com quantas fica?",
+                opcoes: [
+                    "A) 6",
+                    "B) 7",
+                    "C) 8",
+                    "D) 9",
+                    
+                ],
+                resposta: "B"
+            },
+
+             {
+                texto: "15. Qual é a tabuada do 8 × 7??",
+                opcoes: [
+                    "A) 54",
+                    "B) 56",
+                    "C) 64",
+                    "D) 72",
+                    
+                ],
+                resposta: "B"
+            },
+
+             {
+                texto: "16. Resolva: (12 + 6) × 2.?",
+                opcoes: [
+                    "A) 24",
+                    "B) 30",
+                    "C) 36",
+                    "D) 40",
+                    
+                ],
+                resposta: "C"
+            },
+
+            
+
+             {
+                texto: "17. Quanto é 3² + 5²?",
+                opcoes: [
+                    "A) 34",
+                    "B) 36",
+                    "C) 38",
+                    "D) 40",
+                    
+                ],
+                resposta: "A"
+            },
+
+             {
+                texto: "18. Um carro anda 60 km em 1 hora. Quantos quilômetros ele faz em 4 horas?",
+                opcoes: [
+                    "A) 180 km",
+                    "B) 200 km",
+                    "C) 240 km",
+                    "D) 300 km",
+                    
+                ],
+                resposta: "C"
+            },
+
+            {
+                texto: "19. Uma escada está encostada em uma parede, formando um triângulo retângulo. A escada mede 10 metros e a base mede 6 metros. Qual é a altura da parede?",
+                opcoes: [
+                    "A) 6 metros",
+                    "B) 7 metros",
+                    "C) 8 metros3",
+                    "D) 9 metros",
+                    
+                ],
+                resposta: "D"
+            },
+
+
+
+            
+
+            
+        ];
+
+        let current = 0;
+        let respostasUsuario = [];
+
+        function showQuestion(idx) {
+            const quizDiv = document.getElementById('quiz');
+            quizDiv.innerHTML = "";
+
+            if (idx < perguntas.length) {
+                const pergunta = perguntas[idx];
+                const divQ = document.createElement('div');
+                divQ.className = 'question';
+                divQ.textContent = pergunta.texto;
+                quizDiv.appendChild(divQ);
+
+                const divO = document.createElement('div');
+                divO.className = 'options';
+
+                pergunta.opcoes.forEach((op, j) => {
+                    const letra = op[0];
+                    const input = document.createElement('input');
+                    input.type = 'radio';
+                    input.name = 'q' + idx;
+                    input.value = letra;
+                    input.id = 'q' + idx + letra;
+
+                    const label = document.createElement('label');
+                    label.htmlFor = input.id;
+                    label.textContent = op;
+
+                    divO.appendChild(input);
+                    divO.appendChild(label);
+                    divO.appendChild(document.createElement('br'));
+                });
+                quizDiv.appendChild(divO);
+
+                const btn = document.createElement('button');
+                btn.textContent = (idx === perguntas.length - 1) ? "Finalizar" : "Próxima";
+                btn.disabled = true;
+                btn.type = "button";
+                btn.onclick = function() {
+                    const marcada = quizDiv.querySelector('input[name="q'+idx+'"]:checked');
+                    const resposta = marcada ? marcada.value : "-";
+                    respostasUsuario[idx] = resposta;
+                    current++;
+                    showQuestion(current);
+                };
+                // Habilita o botão só após marcar uma opção
+                divO.addEventListener('change', function() {
+                    btn.disabled = false;
+                });
+                quizDiv.appendChild(btn);
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            document.getElementById('quiz').innerHTML = "";
+            let acertos = 0;
+            for (let i = 0; i < perguntas.length; i++) {
+                if (respostasUsuario[i] === perguntas[i].resposta) acertos++;
+            }
+            document.getElementById('result').innerHTML = `<strong>Você acertou ${acertos} de ${perguntas.length} perguntas.</strong>`;
+            // Mostra o gabarito
+            let gab = "<strong>Gabarito:</strong><br>";
+            for (let i = 0; i < perguntas.length; i++) {
+                gab += (i+1) + ": " + perguntas[i].resposta + " (Sua resposta: " + (respostasUsuario[i] || "-") + ")<br>";
+            }
+            document.getElementById('gabarito').innerHTML = gab;
+        }
+
+        showQuestion(current);
+    </script>
+</body>
+</html>
