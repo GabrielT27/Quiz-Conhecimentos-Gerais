@@ -3,27 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Quiz Conhecimento Gerais</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Quiz.css">
+    <!-- ...restante do código... -->
     <style>
-        body { font-family: Arial, sans-serif; background: #eaeaea; }
-        .container { max-width: 600px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px #1a790d; }
+        body { font-family: Arial, sans-serif; background: linear-gradient(90deg,rgb(30, 88, 24) 0%, rgb(8, 162, 42) 50%, rgb(11, 96, 11) 100%); }
+        .container { max-width: 600px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px #918700; }
         h1 { text-align: center; }
         .question { font-size: 1.1em; margin: 20px 0 10px 0; }
         .options { margin-bottom: 20px; }
         .result, .gabarito { margin-top: 30px; }
         .hide { display: none; }
-        button { padding: 10px 20px; font-size: 1em; border: none; border-radius: 4px; background: #007bff; color: #fff; cursor: pointer; }
-        button:disabled { background: #ccc; }
+        button { padding: 10px 20px; font-size: 1em; border: none; border-radius: 4px; background: #1a790d; color: #fff; cursor: pointer; }
+        button:disabled { background: #ffffff; }
     </style>
 </head>
 <body>
-    <h1>Quiz de História</h1>
+    
     <div class="container">
         <img src="imgQuiz.png" alt="Quiz de História" style="display:block; margin:0 auto 20px auto; max-width:100px;">
         <div id="quiz"></div>
         <div class="result" id="result"></div>
         <div class="gabarito" id="gabarito"></div>
     </div>
-    <script></script>
+    <script>
         const perguntas = [
             {
                 texto: "1. Qual foi o principal objetivo das Grandes Navegações europeias no século XV?",
@@ -173,17 +176,7 @@
                 resposta: "B"
             },
 
-             {
-                texto: "14. Se você tem 4 maçãs e ganha mais 3, com quantas fica?",
-                opcoes: [
-                    "A) 6",
-                    "B) 7",
-                    "C) 8",
-                    "D) 9",
-                    
-                ],
-                resposta: "B"
-            },
+          
 
               {
                 texto: "14. Se você tem 4 maçãs e ganha mais 3, com quantas fica?",
@@ -259,13 +252,638 @@
                 resposta: "D"
             },
 
+             {
+                texto: "20. Qual das palavras está escrita incorretamente??",
+                opcoes: [
+                    "A) Concerta",
+                    "B) Exceção",
+                    "C) Lanche",
+                    "D) Enchegar",
+                    "E) Lógica",
+
+                    
+                ],
+                resposta: "D"
+            },
+
+            {
+                texto: "21. Qual a forma correta do plural da palavra “pão”?",
+                opcoes: [
+                    "A) Pãos",
+                    "B) Pãos",
+                    "C) Pães",
+                    "D) Pãozes",
+                    "E) Pãez",
+
+                    
+                ],
+                resposta: "C"
+            },
+
+             {
+                texto: "22. Qual frase está com a pontuação correta?",
+                opcoes: [
+                    "A) Ana gosta de ler escrever e pintar.",
+                    "B) Ana, gosta de ler escrever, e pintar.",
+                    "C) Ana gosta de, ler, escrever e pintar.",
+                    "D) Ana gosta de ler, escrever e pintar.",
+                    "E) Ana gosta, de ler escrever e pintar.",
+
+                    
+                ],
+                resposta: "D"
+            },
+
+             {
+                texto: "23. Em qual alternativa o verbo está conjugado no tempo passado (pretérito)?",
+        
+                opcoes: [
+                    "A) Eu como",
+                    "B) Eu comi",
+                    "C) Eu comeria",
+                    "D) Eu comerei",
+                    "E) Eu comeria",
+
+                    
+                ],
+                resposta: "B"
+            },
+
+            {
+                texto: "24. Em “Ela me deu um presente”, qual é a função do termo “me”?",
+        
+                opcoes: [
+                    "A) Objeto direto",
+                    "B) Predicativo",
+                    "C) Adjunto adnominal",
+                    "D) Objeto indireto",
+                    "E) Sujeito",
+
+                    
+                ],
+                resposta: "D"
+            },
+
+            {
+                texto: "25. Qual das frases está com erro de concordância nominal?",
+        
+                opcoes: [
+                    "A) As alunas estudiosas passaram",
+                    "B) Os meninos corajosos ajudaram",
+                    "C) As provas difíceis foram corrigidas",
+                    "D) Os garoto valentes correram",
+                    "E) As menina estudiosa foi bem",
+
+                    
+                ],
+                resposta: "E"
+            },
+
+             {
+                texto: "26.  Em qual alternativa há erro de regência verbal?",
+        
+                opcoes: [
+                    "A) Obedeceu às ordens",
+                    "B) Aspirou o cargo de gerente",
+                    "C) Assistiu ao jogo",
+                    "D) Agradeceu aos amigos",
+                    "E) Pagou a conta ",
+
+                    
+                ],
+                resposta: "B"
+            },
+
+             {
+                texto: "27.  Qual das frases apresenta um adjunto adverbial?",
+        
+                opcoes: [
+                    "A) A menina inteligente ganhou o prêmio",
+                    "B) O livro vermelho está na estante",
+                    "C) Ontem, fomos ao cinema",
+                    "D) O gato preto dorme no sofá",
+                    "E) O quadro grande caiu da parede",
+
+                    
+                ],
+                resposta: "C"
+            },
+
+             {
+                texto: "28. Em “Era necessário que ele estudasse mais”, qual o modo verbal da forma “estudasse”",
+        
+                opcoes: [
+                    "A) Indicativo",
+                    "B) Subjuntivo",
+                    "C) Imperativo",
+                    "D) Infinitivo",
+                    "E) Particípio",
+
+                    
+                ],
+                resposta: "B"
+            },
+
+             {
+                texto: "29.  Assinale a alternativa que apresenta uma figura de linguagem do tipo metáfora:",
+        
+                opcoes: [
+                    "A) A casa estava cheia como um formigueiro",
+                    "B) O relógio fazia tique-taque sem parar",
+                    "C) Ele tem um coração de pedra",
+                    "D) A menina correu feito um raio",
+                    "E) As estrelas piscavam no céu",
+
+                    
+                ],
+                resposta: "C"
+            },
+
+             {
+                texto: "30.  Qual é o maior oceano do mundo?",
+        
+                opcoes: [
+                    "A) Pacífico",
+                    "B) Atlântico",
+                    "C) Índico",
+                    "D)Ártico",
+                    
+
+                    
+                ],
+                resposta: "A"
+            },
+
+             {
+                texto: "31.  Qual é a capital do Brasil?",
+        
+                opcoes: [
+                    "A) São Paulo",
+                    "B) Rio de Janeiro",
+                    "C) Brasília",
+                    "D) Belo Horizonte",
+                    
+
+                    
+                ],
+                resposta: "C"
+            },
+
+             {
+                texto: "32.   Qual é o maior deserto do mundo?",
+        
+                opcoes: [
+                    "A) Saara",
+                    "B) Gobi",
+                    "C) Mojave",
+                    "D) Atacama",
+                    
+
+                    
+                ],
+                resposta: "A"
+            },
+
+            {
+                texto: "33.   Qual é o rio mais longo da América do Sul?",
+        
+                opcoes: [
+                    "A) Rio Amazonas",
+                    "B) Rio Paraná",
+                    "C)Rio São Francisco",
+                    "D) Rio Magdalena",
+                    
+
+                    
+                ],
+                resposta: "A"
+            },
+
+             {
+                texto: "34.   Qual é o nome do estreito que separa a Europa da África?",
+        
+                opcoes: [
+                    "A) Estreito de Gibraltar",
+                    "B) Estreito de Bósforo",
+                    "C) Estreito de Dardanelos",
+                    "D) Estreito de Malaca",
+                    
+
+                    
+                ],
+                resposta: "A"
+            },
+
+             {
+                texto: "35.   Qual é o nome da cadeia de montanhas que separa a Europa da Ásia?",
+        
+                opcoes: [
+                    "A) Montes Urais",
+                    "B) Montes Cáucasos",
+                    "C) Alpes",
+                    "D) Pirineus",
+                    
+
+                    
+                ],
+                resposta: "A"
+            },
+
+             {
+                texto: "36.   Qual é o nome do fenômeno climático que ocorre quando a temperatura da superfície do mar no Pacífico equatorial fica mais quente do que o normal?",
+        
+                opcoes: [
+                    "A) El Niño",
+                    "B) La Niña",
+                    "C) Monção",
+                    "D) Furacão",
+                    
+
+                    
+                ],
+                resposta: "A"
+            },
+
+            {
+                texto: "37.   Qual é o nome da região geográfica que abrange a Austrália, a Nova Zelândia e as ilhas do Pacífico?",
+        
+                opcoes: [
+                    "A) Oceania",
+                    "B) Ásia-Pacífico",
+                    "C) Pacífico Sul",
+                    "D) Austrália",
+                    
+
+                    
+                ],
+                resposta: "A"
+            },
+
+            {
+                texto: "38.   Qual é o nome do rio que flui através do Grand Canyon?",
+        
+                opcoes: [
+                    "A) Rio Colorado",
+                    "B) Rio Missouri",
+                    "C) Rio Mississippi",
+                    "D) Rio Rio Grande",
+                    
+
+                    
+                ],
+                resposta: "A"
+            },
+
+             {
+                texto: "39.   Qual é o nome da montanha mais alta da África?",
+        
+                opcoes: [
+                    "A) Monte Kilimanjaro",
+                    "B) Monte Quênia",
+                    "C) Monte Atlas",
+                    "D) Monte Drakensberg",
+                    
+
+                    
+                ],
+                resposta: "A"
+            },
+
+            {
+                texto: "40.  Qual organela é responsável pela produção de energia nas células?",
+        
+                opcoes: [
+                    "A) Ribossomo",
+                    "B) Mitocôndria",
+                    "C) Lisossomo",
+                    "D) Complexo Golgiense",
+                    
+
+                    
+                ],
+                resposta: "B"
+            },
+
+             {
+                texto: "41.  Qual é a principal função da clorofila nas plantas?",
+        
+                opcoes: [
+                    "A) Absorver água do solo",
+                    "B) Produzir hormônios vegetais",
+                    "C) Absorver luz para fotossíntese",
+                    "D) Transportar seiva bruta",
+                    
+
+                    
+                ],
+                resposta: "C"
+            },
+
+             {
+                texto: "42. Qual o nome da molécula que armazena a informação genética?",
+        
+                opcoes: [
+                    "A) RNA",
+                    "B) ATP",
+                    "C) DNA",
+                    "D) Glicose",
+                    
+
+                    
+                ],
+                resposta: "C"
+            },
+
+            {
+                texto: "43. O que é uma cadeia alimentar?",
+        
+                opcoes: [
+                    "A) O conjunto de órgãos do sistema digestivo",
+                    "B) A sequência de seres vivos que se alimentam uns dos outros",
+                    "C) A ordem dos alimentos em uma dieta",
+                    "D) A evolução das espécies",
+                    
+
+                    
+                ],
+                resposta: "B"
+            },
+
+            {
+                texto: "44.Qual grupo de seres vivos realiza fotossíntese?",
+        
+                opcoes: [
+                    "A) Fungos",
+                    "B) Animais",
+                    "C) Bactérias e plantas",
+                    "D) Protozoários",
+                    
+
+                    
+                ],
+                resposta: "C"
+            },
+
+             {
+                texto: "45. Qual é a principal enzima responsável pela replicação do DNA em células eucarióticas?",
+        
+                opcoes: [
+                    "A) DNA helicase",
+                    "B) RNA polimerase",
+                    "C) DNA polimerase III",
+                    "D) DNA polimerase delta",
+                    
+
+                    
+                ],
+                resposta: "D"
+            },
+
+            {
+                texto: "46. Qual é a principal diferença entre mitose e meiose?",
+        
+                opcoes: [
+                    "A) Apenas a meiose ocorre em células somáticas",
+                    "B) A mitose reduz o número de cromossomos pela metade",
+                    "C) A meiose gera quatro células geneticamente diferentes",
+                    "D) A mitose é exclusiva de organismos multicelulares",
+                    
+
+                    
+                ],
+                resposta: "C"
+            },
+
+            {
+                texto: "47. Durante o ciclo de Calvin na fotossíntese, qual molécula é fixada para formar glicose?",
+        
+                opcoes: [
+                    "A) O₂",
+                    "B) H₂O",
+                    "C) CO₂",
+                    "D) NADPH",
+                    
+
+                    
+                ],
+                resposta: "C"
+            },
+
+             {
+                texto: "48. Qual das alternativas abaixo representa corretamente o dogma central da biologia molecular?",
+        
+                opcoes: [
+                    "A) DNA → RNA → proteína",
+                    "B)  RNA → DNA → proteína",
+                    "C) Proteína → RNA → DNA",
+                    "D) DNA → proteína → RNA",
+                    
+
+                    
+                ],
+                resposta: "A"
+            },
+
+             {
+                texto: "49. Em qual organela ocorre a modificação pós-traducional de proteínas recém-sintetizadas?",
+        
+                opcoes: [
+                    "A) Lisossomo",
+                    "B) Retículo endoplasmático rugoso",
+                    "C) Complexo de Golgi",
+                    "D) Núcleo",
+                    
+
+                    
+                ],
+                resposta: "C"
+            },
+
+            {
+                texto: "50. Qual é o planeta mais próximo do Sol?",
+        
+                opcoes: [
+                    "A) Terra",
+                    "B) Vênus",
+                    "C) Mercúrio",
+                    "D) Marte",
+                    
+
+                    
+                ],
+                resposta: "C"
+            },
+
+            {
+                texto: "51. Qual o animal conhecido como o 'melhor amigo do homem' ?",
+        
+                opcoes: [
+                    "A)  Gato",
+                    "B) Cachorro",
+                    "C) Cavalo",
+                    "D) Coelho",
+                    
+
+                    
+                ],
+                resposta: "B"
+            },
+
+             {
+                texto: "52. Quem pintou a obra 'Mona Lisa' ",
+        
+                opcoes: [
+                    "A) Pablo Picasso",
+                    "B) Leonardo da Vinci",
+                    "C) Vincent van Gogh",
+                    "D) Salvador Dalí",
+                    
+
+                    
+                ],
+                resposta: "B"
+            },
+
+           
+            {
+                texto: "53. Em que continente fica o Brasil?",
+        
+                opcoes: [
+                    "A) África",
+                    "B) América do Sul",
+                    "C) Europa",
+                    "D) Ásia",
+                    
+
+                    
+                ],
+                resposta: "B"
+            }, 
+
+             {
+                texto: "54. Qual é a capital da Austrália?",
+        
+                opcoes: [
+                    "A) Sydney",
+                    "B) Melbourne",
+                    "C) Canberra",
+                    "D) Brisbane",
+                    
+
+                    
+                ],
+                resposta: "C"
+            },
+
+            {
+                texto: "55. Quem foi o autor do livro Dom Quixote?",
+        
+                opcoes: [
+                    "A) William Shakespeare",
+                    "B) Miguel de Cervantes",
+                    "C) José Saramago",
+                    "D) Gabriel García Márquez",
+                    
+
+                    
+                ],
+                resposta: "B"
+            },
+
+              {
+                texto: "56. Quantos ossos o corpo humano adulto possui, aproximadamente?",
+        
+                opcoes: [
+                    "A) 198",
+                    "B) 206",
+                    "C) 180",
+                    "D) 220",
+                    
+
+                    
+                ],
+                resposta: "B"
+            },
+
+             {
+                texto: "57. Qual elemento químico tem o símbolo 'Au' na tabela periódica?",
+        
+                opcoes: [
+                    "A) Prata",
+                    "B) Alumínio",
+                    "C) Ouro",
+                    "D) Zinco",
+                    
+
+                    
+                ],
+                resposta: "C"
+            },
+
+            {
+                texto: "58. Qual foi o primeiro país a conquistar uma Copa do Mundo de Futebol?",
+        
+                opcoes: [
+                    "A) Brasil",
+                    "B) Itália",
+                    "C) Uruguai",
+                    "D) Alemanha",
+                    
+
+                    
+                ],
+                resposta: "C"
+            },
+
+             {
+                texto: "59. Qual o nome da galáxia mais próxima da Via Láctea?",
+        
+                opcoes: [
+                    "A) Andrômeda",
+                    "B) Centauro A",
+                    "C) Triângulo",
+                    "D) Messier 81",
+                    
+
+                    
+                ],
+                resposta: "A"
+            },
+
+              {
+                texto: "60. Qual é o nome da força que mantém os planetas em órbita ao redor do Sol?",
+        
+                opcoes: [
+                    "A) Força magnética",
+                    "B) Força elétrica",
+                    "C) Força gravitacional",
+                    "D) Força nuclear",
+                    
+
+                    
+                ],
+                resposta: "C"
+            },
+
+
+
+
+
+
+
+
+
+
+
+            
+
 
 
             
 
             
         ];
-
+            
         let current = 0;
         let respostasUsuario = [];
 
@@ -322,22 +940,27 @@
             }
         }
 
-        function showResult() {
-            document.getElementById('quiz').innerHTML = "";
-            let acertos = 0;
-            for (let i = 0; i < perguntas.length; i++) {
-                if (respostasUsuario[i] === perguntas[i].resposta) acertos++;
-            }
-            document.getElementById('result').innerHTML = `<strong>Você acertou ${acertos} de ${perguntas.length} perguntas.</strong>`;
-            // Mostra o gabarito
-            let gab = "<strong>Gabarito:</strong><br>";
-            for (let i = 0; i < perguntas.length; i++) {
-                gab += (i+1) + ": " + perguntas[i].resposta + " (Sua resposta: " + (respostasUsuario[i] || "-") + ")<br>";
-            }
-            document.getElementById('gabarito').innerHTML = gab;
-        }
-
+       // ...existing code...
+function showResult() {
+    document.getElementById('quiz').innerHTML = "";
+    let acertos = 0;
+    for (let i = 0; i < perguntas.length; i++) {
+        if (respostasUsuario[i] === perguntas[i].resposta) acertos++;
+    }
+    document.getElementById('result').innerHTML = `<strong>Você acertou ${acertos} de ${perguntas.length} perguntas.</strong>`;
+    // Mostra o gabarito com símbolos de acerto/erro
+    let gab = "<strong>Gabarito:</strong><br>";
+    for (let i = 0; i < perguntas.length; i++) {
+        const correta = perguntas[i].resposta;
+        const usuario = respostasUsuario[i] || "-";
+        const simbolo = (usuario === correta) ? "✔️" : "❌";
+        gab += (i+1) + ": " + correta + " (Sua resposta: " + usuario + ") " + simbolo + "<br>";
+    }
+    document.getElementById('gabarito').innerHTML = gab;
+}
+// ...existing code...
         showQuestion(current);
     </script>
 </body>
+
 </html>

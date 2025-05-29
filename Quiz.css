@@ -1,0 +1,120 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 650px;
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 35px 40px 30px 40px;
+    border-radius: 16px;
+    box-shadow: 0 6px 24px rgba(0, 123, 255, 0.15);
+    border: 2px solid #1a790d;
+}
+
+h1 {
+    text-align: center;
+    color: #1a790d;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.question {
+    font-size: 1.18em;
+    margin: 25px 0 12px 0;
+    color: #000000;
+    font-weight: bold;
+}
+
+.options label {
+    display: inline-block;
+    margin: 8px 0 8px 8px;
+    padding: 7px 14px;
+    border-radius: 6px;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+
+.options input[type="radio"] {
+    accent-color: #1a790d;
+    margin-right: 6px;
+}
+
+.options label:hover {
+    background: rgb(80, 201, 116);
+}
+
+button {
+    padding: 12px 28px;
+    font-size: 1.08em;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #1a790d 60%, #1a790d 100%);
+    color: #ffffff;
+    cursor: pointer;
+    margin-top: 18px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(26,121,13,0.08);
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:disabled {
+    background: rgb(255, 255, 255)fff;
+    color: #ffffff;
+    cursor: not-allowed;
+     box-shadow: none;
+    border: 1px solid #000000;
+    display: none;
+}
+
+.result {
+    margin-top: 32px;
+    font-size: 1.25em;
+    color: #1a790d;
+    text-align: center;
+    font-weight: bold;
+}
+
+.gabarito {
+    margin-top: 18px;
+    font-size: 1.08em;
+    background: #f7f7f7;
+    border-radius: 8px;
+    padding: 18px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.gabarito strong {
+    color: #1a790d;
+}
+
+.gabarito br {
+    line-height: 2.2;
+}
+
+.gabarito .acerto {
+    color: #1a790d;
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+.gabarito .erro {
+    color: #e74c3c;
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+img {
+    display: block;
+    margin: 0 auto 22px auto;
+    max-width: 110px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.08);
+}
+
+* root {
+    box-sizing: border-box;
+}
