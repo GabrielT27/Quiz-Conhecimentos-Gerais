@@ -5,6 +5,9 @@
     <title>Quiz Conhecimento Gerais</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="Quiz.css">
+    <div style="text-align: center; margin-bottom: 20px;">
+    <input type="text" id="nomeJogador" placeholder="Digite seu nome" style="padding: 10px; width: 80%; max-width: 300px;"/>
+</div>
     <!-- ...restante do código... -->
     <style>
         body { font-family: Arial, sans-serif; background: linear-gradient(90deg,rgb(30, 88, 24) 0%, rgb(8, 162, 42) 50%, rgb(11, 96, 11) 100%); }
@@ -947,16 +950,31 @@ function showResult() {
     for (let i = 0; i < perguntas.length; i++) {
         if (respostasUsuario[i] === perguntas[i].resposta) acertos++;
     }
-    document.getElementById('result').innerHTML = `<strong>Você acertou ${acertos} de ${perguntas.length} perguntas.</strong>`;
-    // Mostra o gabarito com símbolos de acerto/erro
+
+    const nome = document.getElementById("nomeJogador").value || "Anônimo";
+
+    // salva no localStorage
+    const ranking = JSON.parse(localStorage.getItem("rankingQuiz") || "[]");
+    ranking.push({ nome, pontos: acertos });
+    ranking.sort((a, b) => b.pontos - a.pontos);
+    localStorage.setItem("rankingQuiz", JSON.stringify(ranking));
+
+    document.getElementById('result').innerHTML = `<strong>${nome}, você acertou ${acertos} de ${perguntas.length} perguntas.</strong>`;
+
+    // Mostra gabarito
     let gab = "<strong>Gabarito:</strong><br>";
     for (let i = 0; i < perguntas.length; i++) {
-        const correta = perguntas[i].resposta;
-        const usuario = respostasUsuario[i] || "-";
-        const simbolo = (usuario === correta) ? "✔️" : "❌";
-        gab += (i+1) + ": " + correta + " (Sua resposta: " + usuario + ") " + simbolo + "<br>";
+        gab += (i+1) + ": " + perguntas[i].resposta + " (Sua resposta: " + (respostasUsuario[i] || "-") + ")<br>";
     }
     document.getElementById('gabarito').innerHTML = gab;
+
+    // Mostra ranking
+    let rankingHtml = "<hr><h3>Ranking:</h3><ol>";
+    ranking.slice(0, 10).forEach(item => {
+        rankingHtml += `<li>${item.nome} - ${item.pontos} pontos</li>`;
+    });
+    rankingHtml += "</ol>";
+    document.getElementById('gabarito').innerHTML += rankingHtml;
 }
 // ...existing code...
         showQuestion(current);
